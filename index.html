@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="#">
+</head>
+
+<body onload="view()">
+    <div id="app" class="app"></div>
+
+    <script>
+
+        //Model
+
+        const sneeze = new Audio('WAV/mixkit-sick-man-sneeze-2213.wav');
+        const bowling = new Audio('WAV/bowling.wav');
+        const boing = new Audio('WAV/boing_x.wav');
+        const trombone = new Audio('WAV/mixkit-sad-game-over-trombone-471.wav');
+
+        //View
+
+        function view() {
+            document.getElementById('app').innerHTML = /*HTML*/ `
+        <div class="header">Lydmoro!</div>
+        <div class="box">
+            <div class="button" onclick="playSound('sneezeSound')">Prosit!</div>
+            <div class="button" onclick="playSound('bowlingSound')">Strike!</div>
+            <div class="button" onclick="playSound('boingSound')">Boing!</div>
+            <div class="button" onclick="playSound('tromboneSound')">D'oh!</div>
+            </div>
+            `}
+
+        //Controller
+        function playSound(soundToPlay) {
+            if (soundToPlay == 'sneezeSound') {
+                sneeze.play();
+            }
+            else if(soundToPlay == 'bowlingSound'){
+                bowling.play();
+            }
+            else if(soundToPlay == 'boingSound'){
+                boing.play();
+            }
+            else if(soundToPlay == 'tromboneSound'){
+                trombone.play();
+            }
+        }
+    </script>
+</body>
+
+</html>
